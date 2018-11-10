@@ -1,14 +1,9 @@
 package com.example.liaoruochen.myeyes.ui.activity
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
 import com.example.liaoruochen.myeyes.R
-import com.example.liaoruochen.myeyes.ui.base.PermissionsActivity
+import com.example.liaoruochen.myeyes.ui.base.BaseActivity
 
-class SplashActivity : PermissionsActivity() {
-    override fun retry() {
-
-    }
+class SplashActivity : BaseActivity(){
 
     override fun initData() {
 
@@ -22,16 +17,7 @@ class SplashActivity : PermissionsActivity() {
 
     }
 
-    override fun getLayoutId()=R.layout.activity_splash
-
-
-    override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
-
-    }
-
-    override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
-
-    }
+    override fun getLayoutId() = R.layout.activity_splash
 
 
 }
