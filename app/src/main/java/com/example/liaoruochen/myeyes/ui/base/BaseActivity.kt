@@ -1,8 +1,8 @@
 package com.example.liaoruochen.myeyes.ui.base
 
 import android.os.Bundle
-import android.support.annotation.LayoutRes
-import android.support.v7.app.AppCompatActivity
+import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AppCompatActivity
 
 
 abstract class BaseActivity :AppCompatActivity(){
@@ -17,6 +17,8 @@ abstract class BaseActivity :AppCompatActivity(){
     }
 
 
+    @LayoutRes abstract fun getLayoutId():  Int
+
     abstract fun initData()
 
     abstract fun initView()
@@ -25,7 +27,7 @@ abstract class BaseActivity :AppCompatActivity(){
 
 
 
-    @LayoutRes abstract fun getLayoutId():  Int
+
 
 
 }

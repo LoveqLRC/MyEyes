@@ -1,14 +1,19 @@
 package com.example.liaoruochen.myeyes.ui.activity
 
-import android.support.v7.app.AppCompatActivity
+import android.Manifest
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.liaoruochen.myeyes.R
 import com.example.liaoruochen.myeyes.ui.base.BaseActivity
 import com.example.liaoruochen.myeyes.ui.base.MultipleStatusActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : MultipleStatusActivity() {
-    override fun retry() {
 
+class MainActivity : BaseActivity(){
+    override fun getLayoutId(): Int {
+        return R.layout.activity_main
     }
 
     override fun initData() {
@@ -22,9 +27,6 @@ class MainActivity : MultipleStatusActivity() {
     override fun requestData() {
 
     }
-
-
-    override fun getLayoutId() = R.layout.activity_main
 
 
 }
