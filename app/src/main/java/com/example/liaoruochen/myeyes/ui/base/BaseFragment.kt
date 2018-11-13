@@ -52,7 +52,9 @@ abstract class BaseFragment : Fragment() {
     abstract fun lazyLoad()
 
 
-
+    open fun onBackPressed() :Boolean{
+        return false
+    }
 
 
 }

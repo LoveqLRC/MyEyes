@@ -19,7 +19,7 @@ abstract class BaseActivity :AppCompatActivity(){
 
     @LayoutRes abstract fun getLayoutId():  Int
 
-    abstract fun initData()
+    open fun initData(){}
 
     abstract fun initView()
 

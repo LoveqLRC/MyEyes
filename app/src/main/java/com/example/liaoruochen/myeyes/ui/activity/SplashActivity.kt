@@ -46,7 +46,7 @@ class SplashActivity : BaseActivity() {
 
     @NeedsPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE)
     fun enterMainActivity() {
-        "enterMainActivity".toast(this)
+            MainActivity.startMainActivity(this)
     }
 
     @OnShowRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE)
@@ -56,7 +56,7 @@ class SplashActivity : BaseActivity() {
 
     @OnPermissionDenied(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE)
     fun onPermissionsDenied() {
-        "onPermissionsDenied".toast(this)
+       finish()
     }
 
     @OnNeverAskAgain(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE)
