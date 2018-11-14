@@ -5,7 +5,7 @@ import android.view.View
 import com.classic.common.MultipleStatusView
 
 abstract class MultipleStatusFragment :BaseFragment(){
-    open var  mLayoutStatus: MultipleStatusView?=null
+    open var  mLayoutStatus: MultipleStatusView ? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

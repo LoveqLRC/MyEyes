@@ -12,7 +12,7 @@ abstract class BaseActivity :AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
         initData()
-        initView()
+        initView(savedInstanceState)
         requestData()
     }
 
@@ -21,7 +21,7 @@ abstract class BaseActivity :AppCompatActivity(){
 
     open fun initData(){}
 
-    abstract fun initView()
+    abstract fun initView(savedInstanceState: Bundle?)
 
     abstract fun requestData()
 
