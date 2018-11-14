@@ -2,13 +2,10 @@ package com.example.liaoruochen.myeyes.ui.activity
 
 import android.Manifest
 import android.app.AlertDialog
-import android.content.DialogInterface
-import android.content.Intent
+import android.os.Bundle
 import androidx.annotation.StringRes
-import android.widget.Toast
 import com.example.liaoruochen.myeyes.R
 import com.example.liaoruochen.myeyes.ui.base.BaseActivity
-import com.example.liaoruochen.myeyes.utilities.log
 import com.example.liaoruochen.myeyes.utilities.toast
 import permissions.dispatcher.*
 
@@ -24,7 +21,7 @@ class SplashActivity : BaseActivity() {
     }
 
 
-    override fun initView() {
+    override fun initView(savedInstanceState: Bundle?) {
 
     }
 
@@ -46,7 +43,8 @@ class SplashActivity : BaseActivity() {
 
     @NeedsPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE)
     fun enterMainActivity() {
-            MainActivity.startMainActivity(this)
+        MainActivity.startMainActivity(this)
+        finish()
     }
 
     @OnShowRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE)
@@ -56,7 +54,7 @@ class SplashActivity : BaseActivity() {
 
     @OnPermissionDenied(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE)
     fun onPermissionsDenied() {
-       finish()
+        finish()
     }
 
     @OnNeverAskAgain(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE)
@@ -67,9 +65,11 @@ class SplashActivity : BaseActivity() {
 
     private fun showRationaleDialog(@StringRes messageResId: Int, request: PermissionRequest) {
         AlertDialog.Builder(this)
-            .setPositiveButton(R.string.button_allow
+            .setPositiveButton(
+                R.string.button_allow
             ) { _, _ -> request.proceed() }
-            .setNegativeButton(R.string.button_deny
+            .setNegativeButton(
+                R.string.button_deny
             ) { _, _ -> request.cancel() }
             .setCancelable(false)
             .setMessage(messageResId)
