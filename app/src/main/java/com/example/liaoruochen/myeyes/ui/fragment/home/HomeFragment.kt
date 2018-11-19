@@ -2,6 +2,7 @@ package com.example.liaoruochen.myeyes.ui.fragment.home
 
 import com.example.liaoruochen.myeyes.R
 import com.example.liaoruochen.myeyes.ui.base.MultipleStatusFragment
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : MultipleStatusFragment() {
     override fun retry() {
@@ -13,10 +14,13 @@ class HomeFragment : MultipleStatusFragment() {
     }
 
     override fun initView() {
-
+        viewPager.pageMargin = 8
+        viewPager.setPageMarginDrawable(R.drawable.page_margin)
     }
 
     override fun lazyLoad() {
+
+
 
     }
 }
