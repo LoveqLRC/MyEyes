@@ -10,14 +10,14 @@
             style="@style/Widget.AppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <TextView
-                android:id="@+id/title"
-                android:gravity="center"
-                android:text="@string/title_home"
-                android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                android:textAppearance="@style/TextAppearance.MyEyes.ToolbarTitle"
-                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"/>
+        <!--<TextView-->
+                <!--android:id="@+id/title"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/title_home"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="?actionBarSize"-->
+                <!--android:textAppearance="@style/TextAppearance.MyEyes.ToolbarTitle"-->
+                <!--app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"/>-->
 
         <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
