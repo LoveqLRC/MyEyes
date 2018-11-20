@@ -16,7 +16,7 @@ class HomePresenter : BasePresenter<HomeContract.View>(), HomeContract.Presenter
         mRootView?.showLoading()
         var disposable = homeModel.requestCategories()
             .subscribe({ it ->
-
+                mRootView?.setTabTitle(it)
             })
         addSubscription(disposable)
     }

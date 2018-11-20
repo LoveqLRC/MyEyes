@@ -16,15 +16,16 @@
                 android:text="@string/title_home"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
+                android:textAppearance="@style/TextAppearance.MyEyes.ToolbarTitle"
                 app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"/>
 
         <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
+                style="@style/Widget.MyEyes.Tabs"
+                app:tabMode="scrollable"
         />
-
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager

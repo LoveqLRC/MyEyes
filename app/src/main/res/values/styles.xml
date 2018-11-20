@@ -29,11 +29,38 @@
     </style>
 
 
-    <!--<style name="Widget.MyEyes" parent="@android:style/Widget" />-->
-    <!---->
+    <style name="TextAppearance.MyEyes.ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
 
-    <!--<style name="Widget.IOSched.Tabs" parent="@style/Widget.MaterialComponents.TabLayout">-->
-        <!--<item name="tabTextAppearance">@style/TextAppearance.IOSched.Tab</item>-->
-        <!--<item name="tabIndicator">@drawable/tab_indicator</item>-->
-    <!--</style>-->
+    </style>
+
+
+    <style name="TextAppearance.IOSched.Tab" parent="@style/TextAppearance.MaterialComponents.Tab">
+        <item name="android:textColor">@color/tab_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.MyEyes.Tabs" parent="@style/Widget.MaterialComponents.TabLayout">
+        <item name="tabTextAppearance">@style/TextAppearance.IOSched.Tab</item>
+        <item name="tabIndicator">@drawable/tab_indicator</item>
+    </style>
+
+
+    <style name="TextAppearance.MyEyes.BottomNavigationView" parent="@style/TextAppearance.MaterialComponents.BottomNavigationView.Colored">
+        <item name="android:textColor">@color/bottom_nav_item</item>
+    </style>
+
+    <style name="TextAppearance.MyEyes.BottomNavigationView.Active">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--TODO  <item name="labelVisibilityMode">selected</item> 会卡顿-->
+    <style name="Widget.MyEyes.BottomNav" parent="@style/Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="itemIconTint">@color/bottom_nav_item</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.MyEyes.BottomNavigationView.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.MyEyes.BottomNavigationView</item>
+        <item name="labelVisibilityMode">selected</item>
+        <item name="android:theme">@style/ThemeOverlay.MaterialComponents.Dark</item>
+    </style>
 </resources>
