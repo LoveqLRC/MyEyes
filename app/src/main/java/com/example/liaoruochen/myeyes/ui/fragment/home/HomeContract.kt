@@ -11,5 +11,10 @@ interface HomeContract {
 
     interface Presenter : IPresenter<View> {
 
+        /**
+         * 请求分类
+         */
+        fun requestCategories()
+
     }
 }

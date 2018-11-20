@@ -1,6 +1,14 @@
 package com.example.liaoruochen.myeyes.ui.fragment.home
 
-class HomePresenter {
+import com.example.liaoruochen.myeyes.ui.base.BasePresenter
+
+class HomePresenter : BasePresenter<HomeContract.View>(), HomeContract.Presenter {
+
+
+    override fun requestCategories() {
+        checkViewAttached()
+        mRootView?.showLoading()
+    }
 
 
 }
