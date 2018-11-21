@@ -5,4 +5,6 @@ interface IBaseView {
     fun showLoading()
 
     fun dimissLoading()
+
+    fun showError(msg:String)
 }

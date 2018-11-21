@@ -16,4 +16,19 @@
     <string name="title_home">首页</string>
     <string name="title_follow">关注</string>
     <string name="title_notification">通知</string>
+
+    <!--403错误-->
+    <string name="FOUR_ZERO_THREE_ERROR">没有权限访问此链接</string>
+    <!--504错误-->
+    <string name="FIVE_ZERO_FOUR_ERROR_TIME_OUT">网络连接超时</string>
+    <string name="FIVE_ZERO_FOUR_ERROR_NO_NETWORK">没有联网</string>
+
+    <string name="UNKNOW_ERROR">未知异常</string>
+    <string name="UNKNOW_HOST">不知名主机</string>
+
+
+
+
+
+
 </resources>

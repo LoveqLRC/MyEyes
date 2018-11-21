@@ -4,7 +4,7 @@ import io.reactivex.*
 import io.reactivex.internal.operators.completable.CompletableObserveOn
 import org.reactivestreams.Publisher
 
-abstract class BaseScheduler<T> constructor(
+abstract class BaseCompose<T> constructor(
     private val subscribeOnScheduler: Scheduler,
     private val observeOnScheduler: Scheduler
 ) : ObservableTransformer<T, T>,

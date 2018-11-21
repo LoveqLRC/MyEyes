@@ -7,9 +7,14 @@ import com.example.liaoruochen.myeyes.R
 import com.example.liaoruochen.myeyes.net.bean.Category
 import com.example.liaoruochen.myeyes.ui.base.MultipleStatusFragment
 import com.example.liaoruochen.myeyes.ui.fragment.home.homedetail.HomeDetalFragment
+import com.example.liaoruochen.myeyes.utilities.NetUtils
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : MultipleStatusFragment() ,HomeContract.View{
+    override fun showError(msg: String) {
+
+    }
+
     lateinit var mCategories:List<Category>
     private var isRefresh = false
 

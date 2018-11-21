@@ -1,7 +1,7 @@
 package com.example.liaoruochen.myeyes.utilities
 
 object SchedulerUtils {
-    fun <T> ioToMain(): IoMainScheduler<T> {
-        return IoMainScheduler()
+    fun <T> ioToMain(): IoMainCompose<T> {
+        return IoMainCompose()
     }
 }
