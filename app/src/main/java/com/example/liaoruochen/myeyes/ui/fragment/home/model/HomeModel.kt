@@ -4,7 +4,6 @@ import com.example.liaoruochen.myeyes.net.EyesRetrofitManager
 import com.example.liaoruochen.myeyes.net.bean.Category
 import com.example.liaoruochen.myeyes.net.callback.RequestCallback
 import com.example.liaoruochen.myeyes.utilities.SchedulerUtils
-import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
 
 class HomeModel {
@@ -13,7 +12,7 @@ class HomeModel {
      */
     fun requestCategories(callback: RequestCallback<List<Category>>):Disposable{
 
-        return EyesRetrofitManager.service.getcategories()
+        return EyesRetrofitManager.service.getCategories()
             .compose(SchedulerUtils.ioToMain())
             .subscribe(
                 {it -> callback.requestSuccess(it)},

@@ -2,12 +2,11 @@ package com.example.liaoruochen.myeyes.ui.fragment.home
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentStatePagerAdapter
 import com.example.liaoruochen.myeyes.R
 import com.example.liaoruochen.myeyes.net.bean.Category
 import com.example.liaoruochen.myeyes.ui.base.MultipleStatusFragment
-import com.example.liaoruochen.myeyes.ui.fragment.home.homedetail.HomeDetalFragment
-import com.example.liaoruochen.myeyes.utilities.NetUtils
+import com.example.liaoruochen.myeyes.ui.fragment.home.category.CategoryFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : MultipleStatusFragment() ,HomeContract.View{
@@ -20,6 +19,7 @@ class HomeFragment : MultipleStatusFragment() ,HomeContract.View{
 
     override fun setTabTitle(categories:List<Category>) {
         mCategories = categories
+        mLayoutStatus?.showContent()
         viewPager.adapter = HomeAdapter(childFragmentManager)
         tabs.setupWithViewPager(viewPager)
 
@@ -53,6 +53,7 @@ class HomeFragment : MultipleStatusFragment() ,HomeContract.View{
 
         viewPager.pageMargin = 8
         viewPager.setPageMarginDrawable(R.drawable.page_margin)
+        mLayoutStatus = layout_status
     }
 
     override fun lazyLoad() {
@@ -65,9 +66,9 @@ class HomeFragment : MultipleStatusFragment() ,HomeContract.View{
         mPresenter.detachView()
     }
 
-    inner class HomeAdapter(fm:FragmentManager):FragmentPagerAdapter(fm){
+    inner class HomeAdapter(fm:FragmentManager):FragmentStatePagerAdapter(fm){
         override fun getItem(position: Int): Fragment {
-            return HomeDetalFragment()
+            return CategoryFragment.newInstance(mCategories[position].id.toString())
         }
 
         override fun getCount(): Int {

@@ -1,39 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<com.classic.common.MultipleStatusView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/layout_status"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-    <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar"
-            style="@style/Widget.AppBar"
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <!--<TextView-->
-                <!--android:id="@+id/title"-->
-                <!--android:gravity="center"-->
-                <!--android:text="@string/title_home"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="?actionBarSize"-->
-                <!--android:textAppearance="@style/TextAppearance.MyEyes.ToolbarTitle"-->
-                <!--app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"/>-->
+            android:layout_height="match_parent">
 
-        <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabs"
+        <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                style="@style/Widget.AppBar"
                 android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                style="@style/Widget.MyEyes.Tabs"
-                app:tabMode="scrollable"
+                android:layout_height="wrap_content">
+            <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    style="@style/Widget.MyEyes.Tabs"
+                    app:tabMode="scrollable"
+            />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
         />
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    />
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+</com.classic.common.MultipleStatusView>
