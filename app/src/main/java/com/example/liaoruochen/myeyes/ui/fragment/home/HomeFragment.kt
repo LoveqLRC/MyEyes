@@ -1,5 +1,6 @@
 package com.example.liaoruochen.myeyes.ui.fragment.home
 
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
@@ -7,6 +8,9 @@ import com.example.liaoruochen.myeyes.R
 import com.example.liaoruochen.myeyes.net.bean.Category
 import com.example.liaoruochen.myeyes.ui.base.MultipleStatusFragment
 import com.example.liaoruochen.myeyes.ui.fragment.home.category.CategoryFragment
+import com.example.liaoruochen.myeyes.ui.fragment.home.category.daily.DailyFragment
+import com.example.liaoruochen.myeyes.ui.fragment.home.category.discovery.DiscoveryFragment
+import com.example.liaoruochen.myeyes.ui.fragment.home.category.recommend.RecommendFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : MultipleStatusFragment(), HomeContract.View {
@@ -14,10 +18,14 @@ class HomeFragment : MultipleStatusFragment(), HomeContract.View {
 
     }
 
+    private val DISCOVERY_ID = 10001
+    private val RECOMMEND_ID = 10002
+    private val DAILY_ID = 10003
 
     private var mCategories: List<Category> = arrayListOf(
-        Category(10001, "发现"),
-        Category(10002, "推荐"), Category(10003, "日报")
+        Category(DISCOVERY_ID, "发现"),
+        Category(RECOMMEND_ID, "推荐"),
+        Category(DAILY_ID, "日报")
     )
 
     private var isRefresh = false
@@ -74,7 +82,21 @@ class HomeFragment : MultipleStatusFragment(), HomeContract.View {
 
     inner class HomeAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         override fun getItem(position: Int): Fragment {
-            return CategoryFragment.newInstance(mCategories[position].id!!)
+            return when (mCategories[position].id!!) {
+                DISCOVERY_ID -> {
+                    DiscoveryFragment.newInstance(DISCOVERY_ID)
+                }
+                RECOMMEND_ID -> {
+                    RecommendFragment.newInstance(RECOMMEND_ID)
+                }
+                DAILY_ID -> {
+                    DailyFragment.newInstance(DAILY_ID)
+                }
+                else -> {
+                    CategoryFragment.newInstance(mCategories[position].id!!)
+                }
+            }
+
         }
 
         override fun getCount(): Int {
