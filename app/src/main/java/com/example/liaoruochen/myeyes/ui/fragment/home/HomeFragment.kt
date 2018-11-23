@@ -68,7 +68,7 @@ class HomeFragment : MultipleStatusFragment() ,HomeContract.View{
 
     inner class HomeAdapter(fm:FragmentManager):FragmentStatePagerAdapter(fm){
         override fun getItem(position: Int): Fragment {
-            return CategoryFragment.newInstance(mCategories[position].id.toString())
+            return CategoryFragment.newInstance(mCategories[position].id!!)
         }
 
         override fun getCount(): Int {

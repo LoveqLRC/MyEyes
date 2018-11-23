@@ -1,6 +1,7 @@
 package com.example.liaoruochen.myeyes.net.api
 
 import com.example.liaoruochen.myeyes.net.bean.Category
+import com.example.liaoruochen.myeyes.net.bean.Result
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -21,7 +22,7 @@ interface ApiService {
     fun getCategoryContentById(@Path("id") id:Int,
                                @Query("start")startIndex:Int,
                                @Query("num") num :Int,
-                               @QueryMap map :HashMap<String,String>):Observable<Void>
+                               @QueryMap map :HashMap<String,String>):Observable<Result>
 
 
 

@@ -10,6 +10,9 @@ interface CategoryContract {
 
     interface Presenter: IPresenter<View>{
 
+        fun getCategoryContentById(id:Int,
+                                   startIndex:Int,
+                                   num :Int)
     }
 
 }

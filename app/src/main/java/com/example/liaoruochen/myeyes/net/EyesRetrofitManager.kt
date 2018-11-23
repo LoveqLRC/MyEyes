@@ -50,7 +50,7 @@ object EyesRetrofitManager {
             val originalRequest = chain.request()
             val request: Request
             val modifiedUrl = originalRequest.url().newBuilder()
-                .addQueryParameter("udid", "d2807c895f0348a180148c9dfa6f2feeac0781b5")
+                .addQueryParameter("udid", "1dad62050ee54c10965021ed1bff209cdee1f09e")
                 .addQueryParameter("deviceModel", Build.MODEL)
                 .build()
             request = originalRequest.newBuilder().url(modifiedUrl)

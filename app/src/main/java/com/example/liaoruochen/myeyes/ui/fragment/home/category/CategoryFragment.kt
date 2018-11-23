@@ -7,17 +7,33 @@ import com.example.liaoruochen.myeyes.ui.base.MultipleStatusFragment
 import com.example.liaoruochen.myeyes.ui.fragment.home.category.adapter.MultiTypeAdapter
 import kotlinx.android.synthetic.main.fragment_home_detail.*
 
-class CategoryFragment : MultipleStatusFragment() {
+class CategoryFragment : MultipleStatusFragment(),CategoryContract.View {
+    override fun showLoading() {
+
+    }
+
+    override fun dimissLoading() {
+
+    }
+
+    override fun showError(msg: String) {
+
+    }
+
     companion object {
         private const val CATEGORY_ID = "CATEGORY_ID"
-        fun newInstance(categoryId: String): CategoryFragment {
+        fun newInstance(categoryId: Int): CategoryFragment {
             val categoryFragment = CategoryFragment()
             val bundle = Bundle()
-            bundle.putString(CATEGORY_ID, categoryId)
+            bundle.putInt(CATEGORY_ID,categoryId)
             categoryFragment.arguments = bundle
 
             return categoryFragment
         }
+    }
+
+    private val mCategoryPresenter by  lazy {
+        CategotryPresenter()
     }
 
 
@@ -30,10 +46,14 @@ class CategoryFragment : MultipleStatusFragment() {
     }
 
     override fun initView() {
-
+        mCategoryPresenter.attachView(this)
     }
 
     override fun lazyLoad() {
+        val categoryId = arguments?.getInt(CATEGORY_ID)
+        mCategoryPresenter.getCategoryContentById(categoryId!!,0,10)
+
+
         val mDataList = ArrayList<String>()
         for (i in 1..100) {
             mDataList.add("第${i}个")
@@ -42,5 +62,11 @@ class CategoryFragment : MultipleStatusFragment() {
         recyclerview.adapter = MultiTypeAdapter(mDataList, context!!)
 
 
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mCategoryPresenter.detachView()
     }
 }
