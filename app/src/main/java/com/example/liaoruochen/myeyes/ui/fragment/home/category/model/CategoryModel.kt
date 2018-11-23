@@ -21,7 +21,6 @@ class CategoryModel {
 
     fun parmaMap(): HashMap<String, String> {
         val map = HashMap<String, String>()
-        map.put("udid", "1dad62050ee54c10965021ed1bff209cdee1f09e")
         map.put("vc", "256")
         map.put("vn", "3.14")
         map.put("deviceModel", "MIX%202")

@@ -9,16 +9,22 @@ import com.example.liaoruochen.myeyes.ui.base.MultipleStatusFragment
 import com.example.liaoruochen.myeyes.ui.fragment.home.category.CategoryFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : MultipleStatusFragment() ,HomeContract.View{
+class HomeFragment : MultipleStatusFragment(), HomeContract.View {
     override fun showError(msg: String) {
 
     }
 
-    lateinit var mCategories:List<Category>
+
+    private var mCategories: List<Category> = arrayListOf(
+        Category(10001, "发现"),
+        Category(10002, "推荐"), Category(10003, "日报")
+    )
+
     private var isRefresh = false
 
-    override fun setTabTitle(categories:List<Category>) {
-        mCategories = categories
+
+    override fun setTabTitle(categories: List<Category>) {
+        mCategories += categories
         mLayoutStatus?.showContent()
         viewPager.adapter = HomeAdapter(childFragmentManager)
         tabs.setupWithViewPager(viewPager)
@@ -66,13 +72,13 @@ class HomeFragment : MultipleStatusFragment() ,HomeContract.View{
         mPresenter.detachView()
     }
 
-    inner class HomeAdapter(fm:FragmentManager):FragmentStatePagerAdapter(fm){
+    inner class HomeAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         override fun getItem(position: Int): Fragment {
             return CategoryFragment.newInstance(mCategories[position].id!!)
         }
 
         override fun getCount(): Int {
-         return mCategories.size
+            return mCategories.size
         }
 
         override fun getPageTitle(position: Int): CharSequence? {

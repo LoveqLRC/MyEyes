@@ -24,4 +24,5 @@ class Result {
             return "ItemList(type=$type, tag=$tag, id=$id, adIndex=$adIndex, data=$data)"
         }
     }
+
 }
