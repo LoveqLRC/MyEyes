@@ -7,7 +7,7 @@ import com.example.liaoruochen.myeyes.ui.base.MultipleStatusFragment
 import com.example.liaoruochen.myeyes.ui.fragment.home.category.adapter.MultiTypeAdapter
 import kotlinx.android.synthetic.main.fragment_home_detail.*
 
-class CategoryFragment : MultipleStatusFragment(),CategoryContract.View {
+class CategoryFragment : MultipleStatusFragment(), CategoryContract.View {
     override fun showLoading() {
 
     }
@@ -23,16 +23,15 @@ class CategoryFragment : MultipleStatusFragment(),CategoryContract.View {
     companion object {
         private const val CATEGORY_ID = "CATEGORY_ID"
         fun newInstance(categoryId: Int): CategoryFragment {
-            val categoryFragment = CategoryFragment()
-            val bundle = Bundle()
-            bundle.putInt(CATEGORY_ID,categoryId)
-            categoryFragment.arguments = bundle
-
-            return categoryFragment
+            return CategoryFragment().apply {
+                arguments = Bundle().apply {
+                    putInt(CATEGORY_ID, categoryId)
+                }
+            }
         }
     }
 
-    private val mCategoryPresenter by  lazy {
+    private val mCategoryPresenter by lazy {
         CategotryPresenter()
     }
 
@@ -51,7 +50,7 @@ class CategoryFragment : MultipleStatusFragment(),CategoryContract.View {
 
     override fun lazyLoad() {
         val categoryId = arguments?.getInt(CATEGORY_ID)
-        mCategoryPresenter.getCategoryContentById(categoryId!!,0,10)
+        mCategoryPresenter.getCategoryContentById(categoryId!!, 0, 10)
 
 
         val mDataList = ArrayList<String>()
