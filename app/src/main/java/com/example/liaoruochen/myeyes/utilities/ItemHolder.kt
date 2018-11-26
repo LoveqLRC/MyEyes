@@ -9,12 +9,13 @@ import com.example.liaoruochen.myeyes.R
 
 import com.example.liaoruochen.myeyes.ui.fragment.home.category.adapter.MultiTypeAdapter.ITEM_TYPE.ITEM_TEXT
 
-fun createMultiViewHolder(viewGroup:ViewGroup,viewType:Int):RecyclerView.ViewHolder{
+fun createMultiViewHolder(viewGroup: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
     when (viewType) {
         ITEM_TEXT.hashCode() -> {
             val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_common_text, viewGroup, false)
             return CommonTextViewHolder(view)
         }
+
         else -> {
             val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_common_text, viewGroup, false)
             return CommonTextViewHolder(view)
@@ -23,7 +24,6 @@ fun createMultiViewHolder(viewGroup:ViewGroup,viewType:Int):RecyclerView.ViewHol
 }
 
 
-
-class CommonTextViewHolder(view:View) :RecyclerView.ViewHolder(view){
+class CommonTextViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
 }

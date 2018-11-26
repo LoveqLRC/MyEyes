@@ -10,6 +10,20 @@ class MultiTypeAdapter(list: List<String>, context: Context) : RecyclerView.Adap
     private var mContext = context
 
     enum class ITEM_TYPE(val type: String) {
+        ITEM_TEXT_CARD("textCard"),
+        ITEM_BRIEFCARD("briefCard"),
+        ITEM_DYNAMIC_INFOCARD("DynamicInfoCard"),
+        ITEM_HORICONTAL_SCROLLCARD("horizontalScrollCard"),
+        ITEM_FOLLOWCARD("followCard"),
+        ITEM_VIDEOSMALLCARD("videoSmallCard"),
+        ITEM_SQUARECARD_COLLECTION("squareCardCollection"),
+        ITEM_VIDEOCOLLECTION_WITHBRIEF("videoCollectionWithBrief"),
+        ITEM_BANNER("banner"),
+        ITEM_BANNER2("ITEM_BANNER2"),
+        ITEM_VIDEO("video"),
+        ITEM_VIDEOCOLLECTION_OFHORISCROLLCARD("videoCollectionOfHorizontalScrollCard"),
+        ITEM_TEXTHEADER("textHeader"),
+        ITEM_TEXTFOOTER("textFooter"),
         ITEM_TEXT("textContent")
     }
 
