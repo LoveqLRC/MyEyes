@@ -2,9 +2,15 @@ package com.example.liaoruochen.myeyes.ui.fragment.home.category.discovery
 
 import android.os.Bundle
 import com.example.liaoruochen.myeyes.R
+import com.example.liaoruochen.myeyes.net.bean.Result
 import com.example.liaoruochen.myeyes.ui.base.MultipleStatusFragment
 
 class DiscoveryFragment : MultipleStatusFragment(), DiscoveryContract.View {
+
+    override fun requestSuccess(result: Result) {
+
+    }
+
     override fun showLoading() {
 
     }

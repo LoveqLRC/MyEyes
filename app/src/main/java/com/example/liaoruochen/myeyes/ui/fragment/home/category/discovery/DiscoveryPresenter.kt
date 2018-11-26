@@ -13,9 +13,12 @@ class DiscoveryPresenter : BasePresenter<DiscoveryContract.View>(), DiscoveryCon
 
     override fun getDiscoveryContent() {
         checkViewAttached()
+        mRootView?.showLoading()
+
         mDiscoveryModel.getDiscoveryContent(object : BaseSubscriber<Result>(mRootView!!) {
+
             override fun requestSuccess(t: Result) {
-                super.requestSuccess(t)
+
             }
 
         })
